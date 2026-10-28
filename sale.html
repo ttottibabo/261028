@@ -5,23 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>셀렉트마켓 · 이번 주 특가</title>
 <style>
-  body { margin: 0; font-family: sans-serif; color: #172033; background: #f5f7fb; }
-  header, main, footer { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
-  h1 { font-size: 32px; margin: 8px 0; }
-  .card { background: #fff; border: 1px solid #dfe4ed; border-radius: 12px; padding: 16px; margin: 12px 0; }
-  .price { color: #2457f5; font-weight: 700; }
-  footer { color: #657086; font-size: 13px; }
+  :root {
+    --bg: #fff9eb;
+    --panel: #fffdf7;
+    --card: #fff8d7;
+    --card-strong: #ffe082;
+    --accent: #f7b500;
+    --accent-deep: #d98900;
+    --text: #2c2108;
+    --muted: #6b5a2b;
+    --line: #f2d98a;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, #fff8d8 0%, #fffaf0 100%);
+  }
+
+  header, main, footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 28px 18px 18px;
+  }
+
+  header {
+    padding-top: 32px;
+  }
+
+  .brand {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent-deep);
+    background: rgba(255, 209, 92, 0.3);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 12px;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.04em;
+  }
+
+  main {
+    padding-top: 8px;
+  }
+
+  .card {
+    background: linear-gradient(180deg, #fffbe9 0%, var(--card) 100%);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    margin: 14px 0;
+    box-shadow: 0 8px 18px rgba(216, 153, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .card h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .price {
+    margin: 0;
+    color: var(--accent-deep);
+    font-size: 22px;
+    font-weight: 800;
+    white-space: nowrap;
+    background: rgba(255, 209, 92, 0.25);
+    border: 1px solid rgba(247, 181, 0, 0.35);
+    border-radius: 10px;
+    padding: 9px 12px;
+  }
+
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    padding-top: 18px;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .price {
+      width: 100%;
+      text-align: center;
+    }
+  }
 </style>
 </head>
 <body>
 <header>
-  <p>셀렉트마켓</p>
+  <div class="brand">셀렉트마켓</div>
   <h1>이번 주 특가 3가지</h1>
 </header>
 <main>
-  <article class="card"><h2>무선 마우스</h2><p class="price">19,000원</p></article>
-  <article class="card"><h2>노트북 거치대</h2><p class="price">25,000원</p></article>
-  <article class="card"><h2>USB-C 충전기</h2><p class="price">15,000원</p></article>
+  <article class="card">
+    <h2>무선 마우스</h2>
+    <p class="price">19,000원</p>
+  </article>
+  <article class="card">
+    <h2>노트북 거치대</h2>
+    <p class="price">25,000원</p>
+  </article>
+  <article class="card">
+    <h2>USB-C 충전기</h2>
+    <p class="price">15,000원</p>
+  </article>
 </main>
 <footer>
   <p>고객센터 평일 10:00–17:00</p>
